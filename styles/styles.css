@@ -23,7 +23,9 @@ TABLE OF CONTENTS
       10a-v. Team, Large screen rules
       10a-vi. Problem
       10a-vii. Actions
+      10a-viii. Footer
     10b. Media Query, (min-width: 1000px)
+    10c. Feature Query
 
 */
 
@@ -568,18 +570,18 @@ section.problem {
   text-align: center;
   color: #223055;
   padding: 0 1rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .galleryWrap {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: .5em;
+  grid-gap: 0.5em;
   grid-auto-flow: row dense;
 }
 
 .galleryWrap img[src$="_w.jpg"] {
-grid-column-end: span 2;
+  grid-column-end: span 2;
 }
 
 .galleryWrap img[src$="_p.jpg"] {
@@ -587,16 +589,229 @@ grid-column-end: span 2;
 }
 
 .galleryWrap img {
-width: 100%;
-height: 100%;
-object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ######### 9. Footer ######### */
-
+footer {
+  margin-top: 1rem;
+}
 /* ######### 9a. Footer > Contact ######### */
+.form {
+  background-color: #223055;
+  color: #fff;
+  padding: 1rem 1rem 2rem;
+}
+
+.form p {
+  font-weight: 300;
+  padding-bottom: 1rem;
+}
+/* ######### Contact Form ######### */
+form#contactForm {
+  max-width: 350px;
+  margin: auto;
+}
+
+.contactForm div {
+  margin-top: 1em;
+}
+
+.contactForm div:first-of-type {
+  margin-top: 0;
+}
+
+.contactForm label {
+  display: block;
+}
+
+.contactForm input,
+.contactForm textarea {
+  border: solid 1px #dedede;
+  border-radius: 4px;
+  color: #707070;
+  cursor: text;
+  font-size: 1rem;
+  max-width: 350px;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.contactForm textarea {
+  min-height: 100px;
+}
+
+.contactForm button {
+  background-color: #13b1e7;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem;
+  min-width: 200px;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactForm button:hover {
+  background-color: #35b1e8;
+  color: #ffc107;
+}
+
+.contactForm i {
+  font-size: 200%;
+  padding-right: 0.5rem;
+}
+
+.contactForm input[type="submit"]:active {
+  box-shadow: 1px 1px 6px rgba(255, 255, 255, 0.6),
+    0px 0px 4px rgba(255, 255, 255, 0.8);
+}
+
+.contactForm .checks {
+  margin: 0.25em 0 1em 0.1em;
+}
+
+.contactForm input[type="checkbox"] + label {
+  display: inline-block;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* custom checkbox */
+.contactForm .checks label {
+  display: inline-block;
+}
+
+.contactForm input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  margin: 1px 0 0 -1px;
+}
+
+input[type="checkbox"]:checked ~ span:before {
+  content: "\f14a";
+}
+
+.checks span:before {
+  display: inline-block;
+  box-sizing: border-box;
+  color: #13b1e7;
+  content: "\f0c8";
+  font-family: "Font Awesome 5 Free";
+  font-size: 1.3em;
+  margin: -3px 3px 0 0;
+  vertical-align: middle;
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+  border: solid 1px #13b1e7;
+  box-shadow: 0 0 2px #0d92bf, 0px 0px 4px #0d92bf, 1px 1px 4px #13b1e7,
+    2px 2px 4px #13b1e7;
+  outline: none;
+}
+
+/* radio buttons */
+.contactForm div.radioBtns {
+  margin: 1em 0;
+  max-width: 400px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.radioBtns p {
+  padding-bottom: 0;
+  grid-column: span 3;
+}
+
+input[type="radio"]:first-of-type {
+  margin-left: 0;
+}
+
+/* make the new radio button */
+.radioBtns span:before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  content: "\f111";
+  color: #13b1e7;
+  font-size: 1.2em;
+  vertical-align: middle;
+  margin: -4px 3px 0 0;
+}
+
+.radioBtns label {
+  position: relative;
+}
+/* hide the default radio buttons */
+.radioBtns input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+/* create the on (selected) state */
+input[type="radio"]:checked ~ span:before {
+  content: "\f192"; /* unicode for fa dot circle */
+}
 
 /* ######### 9b. Footer > Connect ######### */
+.social,
+.contactInfo {
+  background-color: #13b1e7;
+  color: #fff;
+  padding: 1rem 1rem 0;
+  text-align: center;
+}
+
+.social h3 {
+  border-bottom: solid 1px #b6e8ff;
+  font-weight: 400;
+  padding-bottom: 0.25rem;
+}
+
+.socialIcons {
+  font-size: 200%;
+  padding: 1rem 0;
+}
+
+.socialIcons a {
+  color: #223055;
+  padding: 0 0.5rem;
+}
+
+.socialIcons a:hover {
+  color: #ffc107;
+}
+
+.contactInfo {
+  padding-top: 0;
+}
+
+.contactInfo article {
+  border-top: solid 1px #b6e8ff;
+  padding: 1rem 0;
+}
+
+.contactInfo h4 {
+  font-weight: 400;
+}
+
+.contactInfo li {
+  font-weight: 300;
+  list-style-type: none;
+}
+
+.copy {
+  font-size: 70%;
+  font-weight: 300;
+  padding-top: 1rem;
+}
 
 /* ############ 10. Media Queries ############ */
 
@@ -745,6 +960,7 @@ object-fit: cover;
   }
 
   /* ######### 10a-vi. Problem, Large screen rules ######### */
+
   section.problem {
     background: url(../images/problem1.png) no-repeat center left;
     max-width: 1200px;
@@ -777,6 +993,7 @@ object-fit: cover;
   }
 
   /* ######### 10a-vii. Actions, Large screen rules ######### */
+
   .action {
     max-width: 1200px;
     margin: auto;
@@ -803,8 +1020,147 @@ object-fit: cover;
     flex-basis: 48%;
     grid-template-columns: 2fr 4fr;
   }
+
+  /* ######### 10a-viii. Footer, Large screen rules ######### */
+  footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.25fr;
+  }
+
+  .contact {
+  }
+
+  .social h3 {
+    border-bottom: none;
+    padding: 0.5rem 1rem 0.5rem 0;
+    text-align: right;
+  }
+
+  .social article {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    align-items: center;
+  }
+
+  .socialIcons {
+    border-left: solid #fff 1px;
+    font-size: 150%;
+    padding: 0.5rem 0 0.5rem 1rem;
+  }
+
+  .socialIcons a {
+    display: block;
+  }
+
+  .contactInfo {
+    background-color: #b6e8ff;
+    color: #233156;
+    padding: 1rem 0 0;
+    grid-column: 1 / -1;
+  }
 }
 
 /* ############ 10b. Media Query, (min-width: 1000px) ############ */
 @media screen and (min-width: 1000px) {
+  /* ######### 10b-i. Footer, X-Large screen rules ######### */
+  .form {
+    display: grid;
+    grid-template-columns: auto minmax(min-content, 580px);
+    grid-template-areas:
+      ". h"
+      ". p"
+      ". f";
+  }
+
+  .form h3 {
+    grid-area: h;
+  }
+
+  .form p.formIntro {
+    grid-area: p;
+  }
+
+  form#contactForm {
+    max-width: initial;
+    grid-area: f;
+    display: grid;
+    grid-template-areas:
+      "name ph"
+      "email news"
+      "radio radio"
+      "msg msg"
+      "btn .";
+    grid-gap: 1rem;
+  }
+
+  .contactForm div {
+    margin-top: 0;
+  }
+
+  .contactForm div:nth-child(1) {
+    grid-area: name;
+  }
+
+  .contactForm div:nth-child(2) {
+    grid-area: ph;
+  }
+
+  .contactForm div:nth-child(3) {
+    grid-area: email;
+  }
+
+  .contactForm div:nth-child(4) {
+    grid-area: radio;
+  }
+
+  .contactForm div:nth-child(5) {
+    grid-area: msg;
+  }
+
+  .contactForm div:nth-child(6) {
+    margin: 1.8rem 0 0;
+    grid-area: news;
+  }
+
+  .contactForm button {
+    width: 100%;
+    grid-area: btn;
+  }
+
+  .contactForm textarea {
+    max-width: 100%;
+  }
+  /*  ########### NEW CODE END (05_03) ########### */
+
+  .social article {
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .socialIcons {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .socialIcons a {
+    display: inline-block;
+    font-size: 180%;
+  }
+}
+
+/* ############ 10c. Feature Query ############ */
+/* SAFARI 11+ */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    .galleryWrap {
+      align-items: stretch;
+    }
+    .galleryWrap img {
+      height: inherit;
+    }
+  }
 }
